@@ -1,1 +1,9 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block seo %}
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.description }}">
+    <meta name="keywords" content="{% for keyword in seo.keywords.all %}{{ keyword.name }}, {% endfor %}">
+{% endblock %}

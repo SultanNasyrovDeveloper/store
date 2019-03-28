@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+
+from store.core.views import ShopViewBase
 
 
-class IndexView(TemplateView):
+class IndexView(ShopViewBase):
+
+    name = 'Index page'
     template_name = 'index.html'
+
+    def prepare_context(self):
+        pass
