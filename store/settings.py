@@ -40,8 +40,9 @@ INSTALLED_APPS = [
 
     'store.core',
     'store.catalog',
-    'store.seo',
+    'store.wish_list',
 
+    'store.seo',
     'store.index_page',
 
 ]
