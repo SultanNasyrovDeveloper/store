@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 
-{% block seo %}
+{% block meta %}
     <title>{{ seo.title }}</title>
-    <meta name="description" content="{{ seo.description }}">
-    <meta name="keywords" content="{% for keyword in seo.keywords.all %}{{ keyword.name }}, {% endfor %}">
+	<meta name="keywords" content="{% for keyword in seo.keywords.all %}{{ keyword.name }}, {% endfor %}">
+	<meta name="description" content="{{ seo.description }}">
 {% endblock %}

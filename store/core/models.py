@@ -1,6 +1,8 @@
 from django.db import models
 
 
+# TODO delete all unused folders and files
+
 class SiteSettings(models.Model):
     """ Site settings file """
 

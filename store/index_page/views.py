@@ -3,6 +3,8 @@ from django.shortcuts import render
 from store.core.views import ShopViewBase
 from store.core.models import SiteSettings
 
+from .models import Banner
+
 
 class IndexView(ShopViewBase):
 
@@ -12,3 +14,4 @@ class IndexView(ShopViewBase):
     def prepare_context(self):
         context = self.get_context()
         context['settings'], _ = SiteSettings.objects.get_or_create()
+        context['banners'] = Banner.objects.all()
