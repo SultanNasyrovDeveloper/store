@@ -808,7 +808,7 @@ a {
 .text--normal {
   font-style: normal; }
 .text--underline {
-  font-style: underline; }
+  text-decoration: underline; }
 
 /* Font specialized */
 .body--font {
@@ -4625,25 +4625,25 @@ h3.widget-title-modal {
   .page-blog .wn__pagination {
   margin-top: 30px;
 }
-  .wn__pagination li {
-    display: inline-block; }
-    .wn__pagination li.active a {
-      border-color: #363636;
-      color: #363636; }
-    .wn__pagination li a {
-      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-      border-bottom: 2px solid transparent;
-      color: #777;
-      display: inline-block;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 20px;
-      margin: 0 5px;
-      padding: 0 13px;
-      text-align: center; }
-      .wn__pagination li a:hover {
-        border-color: #363636;
-        color: #363636; }
+.wn__pagination li {
+  display: inline-block; }
+.wn__pagination li.active a {
+  border-color: #363636;
+  color: #363636; }
+.wn__pagination li a {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-bottom: 2px solid transparent;
+  color: #777;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0 5px;
+  padding: 0 13px;
+  text-align: center; }
+.wn__pagination li a:hover {
+  border-color: #363636;
+  color: #363636; }
 
 @media only screen and (max-width: 767px) {
   .blog-page .blog__post .content p {
@@ -4676,7 +4676,7 @@ h3.widget-title-modal {
 }
   .gallery__menu button {
     background: #fff none repeat scroll 0 0;
-    color: color: #333;
+    color: #333;
     border: medium none;
     display: inline-block;
     font-size: 12px;
@@ -5753,7 +5753,7 @@ a.checkout__title {
       .wedget__categories.poroduct--cat ul li a:hover {
         color: #e59285; }
       .wedget__categories.poroduct--cat ul li a span {
-        color: ##333;
+        color: #333;
         float: right; }
 .wedget__categories.pro--range {
   margin: 0 0 30px; }
@@ -5880,7 +5880,7 @@ a.checkout__title {
   margin: 0 0 30px;
   padding: 10px 0;
   width: 100%; }
-  .shop__list__wrapper .shop__list a {
+.shop__list__wrapper .shop__list a {
     border: 1px solid #ccc;
     color: #a3a3a3;
     font-size: 15px;

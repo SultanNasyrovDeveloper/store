@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, ProductCategory, ProductSize, ProductImage
+from .models import Product, ProductSize, ProductImage, ProductCategory, ProductBadge
 
 
 class ProductImageTabularAdmin(admin.TabularInline):
@@ -15,6 +15,11 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(ProductBadge)
+class ProductBadgeAdmin(admin.ModelAdmin):
     pass
 
 
