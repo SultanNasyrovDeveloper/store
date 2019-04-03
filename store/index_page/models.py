@@ -15,7 +15,7 @@ class Banner(models.Model):
         ordering = ('position',)
 
     def __str__(self):
-        return 'Banner {}'.format(self.id)
+        return 'Banner {}'.format(self.position)
 
 
 class PageSettings(models.Model):

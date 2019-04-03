@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_filters',
+    'whoosh',
+    'haystack',
+
     'store.core',
     'store.catalog',
     'store.wish_list',
@@ -112,6 +116,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
+
+HAYSTACK_CONNECTIONS = {
+    'default': 'haystack.backends.whoosh_backend.WhooshEngine',
+    'PATH': WHOOSH_INDEX
+}
 
 
 # Internationalization

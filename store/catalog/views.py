@@ -9,3 +9,4 @@ class CatalogView(ShopViewBase):
 
     def prepare_context(self):
         context = self.get_context()
+
