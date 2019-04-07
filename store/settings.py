@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_filters',
-    'whoosh',
-    'haystack',
 
     'store.core',
     'store.catalog',
@@ -48,6 +46,9 @@ INSTALLED_APPS = [
 
     'store.seo',
     'store.index_page',
+
+    'store.search',
+    'django_elasticsearch_dsl',
 
 ]
 
@@ -99,6 +100,13 @@ DATABASES = {
 }
 
 
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -116,14 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
-
-HAYSTACK_CONNECTIONS = {
-    'default': 'haystack.backends.whoosh_backend.WhooshEngine',
-    'PATH': WHOOSH_INDEX
-}
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
