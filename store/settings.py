@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'store.index_page',
 
     'store.search',
-    'django_elasticsearch_dsl',
 
 ]
 
@@ -96,13 +95,6 @@ DATABASES = {
         'PASSWORD': '123456',
         'HOST': 'localhost',
         'PORT': '',
-    }
-}
-
-
-ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': 'localhost:9200'
     }
 }
 

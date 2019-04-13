@@ -5,5 +5,7 @@ from .models import Product
 
 class ProductFilter(filters.FilterSet):
 
+
     class Meta:
         model = Product
+        exclude = ('display', 'description',)
