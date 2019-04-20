@@ -46,9 +46,6 @@ INSTALLED_APPS = [
 
     'store.seo',
     'store.index_page',
-
-    'store.search',
-
 ]
 
 MIDDLEWARE = [
