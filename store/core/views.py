@@ -21,11 +21,11 @@ class ShopViewBase(View):
         context = self.get_context()
         context['seo'] = SeoPage.optimize(self.name)
 
-    def prepare_context(self, request):
+    def prepare_context(self, request, *args, **kwargs):
         return NotImplementedError
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         self.prepare_seo()
-        self.prepare_context(request)
+        self.prepare_context(request, args, kwargs)
         context = self.get_context()
         return render(request, self.template_name, context)

@@ -12,7 +12,7 @@ class IndexView(ShopViewBase):
     name = 'Index page'
     template_name = 'index_page/index.html'
 
-    def prepare_context(self, request):
+    def prepare_context(self, request, *args, **kwargs):
         products = Product.displayed.all()
         context = self.get_context()
         context['banners'] = Banner.objects.all()

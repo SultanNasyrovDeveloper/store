@@ -76,8 +76,7 @@ class Product(models.Model):
         return '[ID={}] {}'.format(self.id, self.title or None)
 
     def get_absolute_url(self):
-        # TODO implement
-        pass
+        return reverse('catalog:detail', kwargs={'product_id': str(self.id)})
 
 
 class ProductImage(models.Model):
