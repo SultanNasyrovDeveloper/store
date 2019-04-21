@@ -1,3 +1,10 @@
 from django.db import models
+from django.contrib.auth
 
-# Create your models here.
+from .cart import CartBase
+
+
+class DatabaseCart(models.Model, CartBase):
+    pass
+
+

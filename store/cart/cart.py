@@ -1,9 +1,6 @@
 from django.contrib.auth.models import User
 
 
-
-
-
 class CartBase(object):
 
     @property
@@ -29,10 +26,6 @@ class CartBase(object):
 
 
 class SessionCart(CartBase):
-    pass
-
-
-class DatabaseCart(CartBase):
     pass
 
 
