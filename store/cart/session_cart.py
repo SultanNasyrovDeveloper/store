@@ -1,15 +1,18 @@
-from django.db import models
-from django.contrib.auth.models import User
-
 from .base import CartBase
 
 
-class CartItem(models.Model):
-    pass
+class SessionCart(CartBase):
+    """ Session based cart (Used with unauthorized users) """
 
+    def __init__(self, request):
+        # get session
+        self.session = request.session
 
-class DatabaseCart(models.Model, CartBase):
-    """ Database based cart(Used only with authorized users) """
+        # get cart dictionary
+        if not self.session['cart']:
+            self.session['cart'] = dict()
+        self.cart = self.session['cart']
+
     @property
     def items_count(self):
         """ Number of items currently in the cart """
@@ -40,5 +43,10 @@ class DatabaseCart(models.Model, CartBase):
     def _save(self):
         """ Save cart to the session """
         self.session = self.cart
+
+
+
+
+
 
 

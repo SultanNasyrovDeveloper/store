@@ -1,4 +1,7 @@
-from django.contrib.auth.models import User
+
+
+class CartItemBase(object):
+    pass
 
 
 class CartBase(object):
@@ -15,24 +18,14 @@ class CartBase(object):
     def items_list(self):
         return NotImplementedError
 
-    def add_item(self):
+    def add_item(self, item):
         return NotImplementedError
 
-    def remove_item(self):
+    def remove_item(self, item):
         return NotImplementedError
 
-    def change_quantity(self):
+    def change_quantity(self, item):
         return NotImplementedError
 
-
-class SessionCart(CartBase):
-    pass
-
-
-def simple_cart_factory(user):
-    # TODO implement
-    # if user authenticated
-    # return DatabaseCart
-    # else
-    # return session cart
-    pass
+    def clean_cart(self):
+        return NotImplementedError
