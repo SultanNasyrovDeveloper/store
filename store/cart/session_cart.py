@@ -1,14 +1,22 @@
 from .base import CartBase
 
 
+class SessionCartItem(object):
+    def __init__(self):
+        product = None
+        self.dict_key = None
+        self.name = product.name
+        self.quantity = int()
+
+    def serialize(self):
+        pass
+
+
 class SessionCart(CartBase):
     """ Session based cart (Used with unauthorized users) """
 
     def __init__(self, request):
-        # get session
         self.session = request.session
-
-        # get cart dictionary
         if not self.session['cart']:
             self.session['cart'] = dict()
         self.cart = self.session['cart']
@@ -32,8 +40,8 @@ class SessionCart(CartBase):
         """ Add new item to the cart """
         pass
 
-    def remove_item(self, item):
-        """ Remove item from the cart """
+    def delete_item(self, item):
+        """ Delete item from the cart """
         pass
 
     def clean_cart(self):

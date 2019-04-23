@@ -4,16 +4,13 @@ from django.contrib.auth.models import User
 from .base import CartBase
 
 
-class CartItem(models.Model):
-    pass
-
-
 class DatabaseCart(models.Model, CartBase):
     """ Database based cart(Used only with authorized users) """
+
     @property
     def items_count(self):
         """ Number of items currently in the cart """
-        return len(self.cart)
+        return
 
     @property
     def total(self):
@@ -22,14 +19,13 @@ class DatabaseCart(models.Model, CartBase):
 
     def __str__(self):
         """ Cart string representation """
-        # TODO implement
         pass
 
     def add_item(self, item):
         """ Add new item to the cart """
         pass
 
-    def remove_item(self, item):
+    def delete_item(self, item):
         """ Remove item from the cart """
         pass
 
@@ -37,8 +33,23 @@ class DatabaseCart(models.Model, CartBase):
         """ Remove all items from the cart """
         pass
 
-    def _save(self):
-        """ Save cart to the session """
-        self.session = self.cart
+
+class CartItem(models.Model):
+    """ Cart item model for database cart """
+    cart = models.ForeignKey(DatabaseCart, on_delete=models.CASCADE, related_name='items', related_query_name='items')
+    product = models.ForeignKey('catalog.Product', on_delete=models.CASCADE)
+    quantity = models.SmallIntegerField(default=1, verbose_name='Quantity')
+
+
+class Order(models.Model):
+    pass
+
+
+class OrderItem(models.Model):
+    pass
+
+
+
+
 
 

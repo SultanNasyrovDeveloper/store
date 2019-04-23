@@ -172,14 +172,15 @@
 							<li class="shop_search"><a class="search__active" href="#"></a></li>
 							<li class="wishlist"><a href="#"></a></li>
 							<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">3</span></a>
-								<!-- Start Shopping Cart -->
+
+                                <!-- Start Shopping Cart -->
 								<div class="block-minicart minicart__active">
 									<div class="minicart-content-wrapper">
 										<div class="micart__close">
 											<span>close</span>
 										</div>
 										<div class="items-total d-flex justify-content-between">
-											<span>3 items</span>
+											<span>4 items</span>
 											<span>Cart Subtotal</span>
 										</div>
 										<div class="total_amount text-right">
@@ -246,6 +247,7 @@
 									</div>
 								</div>
 								<!-- End Shopping Cart -->
+
 							</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
 								<div class="searchbar__content setting__block">
@@ -366,6 +368,7 @@
 			</div>
 		</header>
 		<!-- //Header -->
+
 
 		<!-- Start Search Popup -->
 		<div class="brown--color box-search-content search_active block-bg close__top">
@@ -529,12 +532,19 @@
 	</div>
 	<!-- //Main wrapper -->
 
+
 	<!-- JS Files -->
 	<script src="{% static 'js/vendor/jquery-3.2.1.min.js' %}"></script>
 	<script src="{% static 'js/popper.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}s"></script>
 	<script src="{% static 'js/plugins.js' %}"></script>
 	<script src="{% static 'js/active.js' %}"></script>
+    <script src="{% static 'js/ajax_setup.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+
+    {% block script %}
+
+    {% endblock %}
 
 </body>
 </html>

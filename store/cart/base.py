@@ -21,7 +21,7 @@ class CartBase(object):
     def add_item(self, item):
         return NotImplementedError
 
-    def remove_item(self, item):
+    def delete_item(self, item):
         return NotImplementedError
 
     def change_quantity(self, item):
