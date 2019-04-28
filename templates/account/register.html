@@ -31,18 +31,36 @@
 							<form action="{% url 'account:register' %}" method="post">
                                 {% csrf_token %}
 								<div class="account__form">
-                                        <div class="input__box">
-                                            <label>Email <span>*</span></label>
-                                            {{ form.email }}
-                                        </div>
-                                        <div class="input__box">
-                                            <label>Пароль<span>*</span></label>
-                                            {{ form.password1 }}
-                                        </div>
-                                        <div class="input__box">
-                                            <label>Повторите пароль<span>*</span></label>
-                                            {{ form.password2 }}
-                                        </div>
+                                    {{ form.non_field_errors }}
+                                    <div class="input__box">
+                                        <label>Логин <span>*</span></label>
+                                        {{ form.username }}
+                                        {% for error in form.username.errors %}
+                                            {{ error|escape }}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="input__box">
+                                        <label>Email</label>
+                                        {{ form.email }}
+                                        {% for error in form.email.errors %}
+                                            {{ error|escape }}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="input__box">
+                                        <label>Пароль<span>*</span></label>
+                                        {{ form.password1 }}
+                                        {% for error in form.password1.errors %}
+                                            {{ error|escape }}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="input__box">
+                                        <label>Подтвердите пароль<span>*</span></label>
+                                        {{ form.password2 }}
+                                        {% for error in form.password2.errors %}
+                                            {{ error|escape }}
+                                        {% endfor %}
+                                    </div>
+
 									<div class="form__btn">
 										<button>Зарегистрироваться</button>
 									</div>

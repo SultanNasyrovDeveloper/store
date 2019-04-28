@@ -14,12 +14,9 @@ class AccountView(ShopViewBase):
 
 
 def register(request):
+    form = RegistrationForm(request.POST or None)
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
         if form.is_valid():
-            print('Form is valid')
+            form.save(commit=True)
             return redirect(reverse('index_page:index'))
-        else:
-            return render(request, 'account/register.html', {'form': RegistrationForm()})
-    else:
-        return render(request, 'account/register.html', {'form': RegistrationForm()})
+    return render(request, 'account/register.html', {'form': form})
