@@ -12,8 +12,9 @@ class IndexView(ShopViewBase):
     name = 'Index page'
     template_name = 'index_page/index.html'
 
-    def prepare_context(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         products = Product.displayed.all()
         context = self.get_context()
         context['banners'] = Banner.objects.all()
         context['new_products'] = products.order_by('creation_date')[:10]
+        return render(request, self.template_name, context)
